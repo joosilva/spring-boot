@@ -5,6 +5,7 @@ import com.curso.cursospringapi.domain.model.OrdemServico;
 import com.curso.cursospringapi.domain.repository.OrdemServicoRepository;
 import com.curso.cursospringapi.domain.service.OrdemServicoService;
 import jakarta.validation.Valid;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,6 +24,9 @@ public class OrdemServicoController {
     @Autowired
     private OrdemServicoRepository ordemServicoRepository;
 
+    @Autowired
+    private ModelMapper modelMapper;
+
     @GetMapping
     public List<OrdemServico> getOrdensServico() {
 
@@ -30,7 +34,7 @@ public class OrdemServicoController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<OrdemServico> getClienteById(@PathVariable Long id) {
+    public ResponseEntity<OrdemServico> getOrdemServicoById(@PathVariable Long id) {
         Optional<OrdemServico> ordemServico = ordemServicoRepository.findById(id);
 
         if(ordemServico.isPresent()) {

@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
-import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import java.util.List;
 
 @Data
@@ -12,7 +12,7 @@ import java.util.List;
 public class Resposta {
 
     private Integer status;
-    private LocalDateTime dataEHora;
+    private OffsetDateTime dataEHora;
     private String titulo;
     private List<Campo> campos;
 
