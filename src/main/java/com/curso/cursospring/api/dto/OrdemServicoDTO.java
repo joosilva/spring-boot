@@ -1,7 +1,7 @@
-package com.curso.cursospringapi.api.dto;
+package com.curso.cursospring.api.dto;
 
-import com.curso.cursospringapi.domain.model.Cliente;
-import com.curso.cursospringapi.domain.model.StatusOrdemServico;
+import com.curso.cursospring.domain.model.Cliente;
+import com.curso.cursospring.domain.model.StatusOrdemServico;
 import lombok.Data;
 
 import java.math.BigDecimal;

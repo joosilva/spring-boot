@@ -1,4 +1,4 @@
-package com.curso.cursospringapi.domain.model;
+package com.curso.cursospring.domain.model;
 
 public enum StatusOrdemServico {
 

@@ -1,19 +1,14 @@
-package com.curso.cursospringapi.api.controller;
+package com.curso.cursospring.api.controller;
 
-import com.curso.cursospringapi.domain.model.Cliente;
-import com.curso.cursospringapi.domain.repository.ClienteRepository;
-import com.curso.cursospringapi.domain.service.ClienteService;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.PersistenceContext;
+import com.curso.cursospring.domain.model.Cliente;
+import com.curso.cursospring.domain.repository.ClienteRepository;
+import com.curso.cursospring.domain.service.ClienteService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.net.http.HttpResponse;
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 

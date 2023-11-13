@@ -1,6 +1,6 @@
-package com.curso.cursospringapi.domain.repository;
+package com.curso.cursospring.domain.repository;
 
-import com.curso.cursospringapi.domain.model.Cliente;
+import com.curso.cursospring.domain.model.Cliente;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

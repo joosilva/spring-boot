@@ -1,15 +1,14 @@
-package com.curso.cursospringapi.domain.service;
+package com.curso.cursospring.domain.service;
 
-import com.curso.cursospringapi.domain.exception.NegocioException;
-import com.curso.cursospringapi.domain.model.Cliente;
-import com.curso.cursospringapi.domain.model.OrdemServico;
-import com.curso.cursospringapi.domain.model.StatusOrdemServico;
-import com.curso.cursospringapi.domain.repository.ClienteRepository;
-import com.curso.cursospringapi.domain.repository.OrdemServicoRepository;
+import com.curso.cursospring.domain.exception.NegocioException;
+import com.curso.cursospring.domain.model.Cliente;
+import com.curso.cursospring.domain.model.OrdemServico;
+import com.curso.cursospring.domain.model.StatusOrdemServico;
+import com.curso.cursospring.domain.repository.ClienteRepository;
+import com.curso.cursospring.domain.repository.OrdemServicoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 
 @Service

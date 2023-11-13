@@ -1,7 +1,7 @@
-package com.curso.cursospringapi.api.exceptionhandler;
+package com.curso.cursospring.api.exceptionhandler;
 
-import com.curso.cursospringapi.api.exceptionhandler.resposta.Resposta;
-import com.curso.cursospringapi.domain.exception.NegocioException;
+import com.curso.cursospring.api.exceptionhandler.resposta.Resposta;
+import com.curso.cursospring.domain.exception.NegocioException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
-import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
 

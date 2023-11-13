@@ -1,4 +1,4 @@
-package com.curso.cursospringapi;
+package com.curso.cursospring;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

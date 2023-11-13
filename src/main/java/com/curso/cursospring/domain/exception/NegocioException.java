@@ -1,4 +1,4 @@
-package com.curso.cursospringapi.domain.exception;
+package com.curso.cursospring.domain.exception;
 
 public class NegocioException extends RuntimeException {
 

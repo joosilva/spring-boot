@@ -1,4 +1,4 @@
-package com.curso.cursospringapi.domain;
+package com.curso.cursospring.domain;
 
 public interface ValidationGroups {
 

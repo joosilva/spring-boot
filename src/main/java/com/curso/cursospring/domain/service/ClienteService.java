@@ -1,8 +1,8 @@
-package com.curso.cursospringapi.domain.service;
+package com.curso.cursospring.domain.service;
 
-import com.curso.cursospringapi.domain.exception.NegocioException;
-import com.curso.cursospringapi.domain.model.Cliente;
-import com.curso.cursospringapi.domain.repository.ClienteRepository;
+import com.curso.cursospring.domain.exception.NegocioException;
+import com.curso.cursospring.domain.model.Cliente;
+import com.curso.cursospring.domain.repository.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

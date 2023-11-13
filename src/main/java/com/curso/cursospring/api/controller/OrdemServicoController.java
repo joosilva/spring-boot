@@ -1,9 +1,9 @@
-package com.curso.cursospringapi.api.controller;
+package com.curso.cursospring.api.controller;
 
-import com.curso.cursospringapi.domain.model.Cliente;
-import com.curso.cursospringapi.domain.model.OrdemServico;
-import com.curso.cursospringapi.domain.repository.OrdemServicoRepository;
-import com.curso.cursospringapi.domain.service.OrdemServicoService;
+import com.curso.cursospring.api.dto.OrdemServicoDTO;
+import com.curso.cursospring.domain.model.OrdemServico;
+import com.curso.cursospring.domain.repository.OrdemServicoRepository;
+import com.curso.cursospring.domain.service.OrdemServicoService;
 import jakarta.validation.Valid;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,11 +34,12 @@ public class OrdemServicoController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<OrdemServico> getOrdemServicoById(@PathVariable Long id) {
+    public ResponseEntity<OrdemServicoDTO> getOrdemServicoById(@PathVariable Long id) {
         Optional<OrdemServico> ordemServico = ordemServicoRepository.findById(id);
 
         if(ordemServico.isPresent()) {
-            return ResponseEntity.ok(ordemServico.get());
+            OrdemServicoDTO ordemServicoDTO = modelMapper.map(ordemServico.get(), OrdemServicoDTO.class);
+            return ResponseEntity.ok(ordemServicoDTO);
         }
         return ResponseEntity.notFound().build();
     }

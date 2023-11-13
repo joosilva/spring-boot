@@ -1,4 +1,4 @@
-package com.curso.cursospringapi.api.exceptionhandler.resposta;
+package com.curso.cursospring.api.exceptionhandler.resposta;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
