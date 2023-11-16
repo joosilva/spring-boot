@@ -34,14 +34,10 @@ public class OrdemServico {
     private BigDecimal preco;
 
 
-    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     @Enumerated(EnumType.STRING)
     private StatusOrdemServico status;
 
-    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private OffsetDateTime dataAbertura;
-
-    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private OffsetDateTime dataFechamento;
 
 }
