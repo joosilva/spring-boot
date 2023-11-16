@@ -2,6 +2,7 @@ package com.curso.cursospring.api.exceptionhandler;
 
 import com.curso.cursospring.api.exceptionhandler.resposta.Resposta;
 import com.curso.cursospring.domain.exception.NegocioException;
+import com.curso.cursospring.domain.exception.NoFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
@@ -29,6 +30,18 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
     @ExceptionHandler(NegocioException.class)
     public ResponseEntity<Object> handleNegocioExceptional(NegocioException ex, WebRequest request) {
         var status = HttpStatus.BAD_REQUEST;
+
+        var resposta = new Resposta();
+        resposta.setStatus(status.value());
+        resposta.setTitulo(ex.getMessage());
+        resposta.setDataEHora(OffsetDateTime.now());
+
+        return handleExceptionInternal(ex, resposta, new HttpHeaders(), status, request);
+    }
+
+    @ExceptionHandler(NoFoundException.class)
+    public ResponseEntity<Object> handleNoFoundExceptional(NegocioException ex, WebRequest request) {
+        var status = HttpStatus.NOT_FOUND;
 
         var resposta = new Resposta();
         resposta.setStatus(status.value());

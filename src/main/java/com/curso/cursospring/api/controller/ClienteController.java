@@ -36,10 +36,6 @@ public class ClienteController {
         return clientes.stream().map(cliente -> toMap(cliente)).collect(Collectors.toList());
     }
 
-    private Cliente toEntity (ClienteDTO clienteDTO) {
-        return modelMapper.map(clienteDTO, Cliente.class);
-    }
-
     @GetMapping
     public List<ClienteDTO> getClientes() {
 
