@@ -69,4 +69,16 @@ public class OrdemServicoController {
         return toMap(ordemServicoService.save(ordemServico));
     }
 
+    @PutMapping("/{id}/finalizacao")
+    public ResponseEntity finalizar(@PathVariable Long id) {
+
+        return ordemServicoService.finalizar(id);
+    }
+
+    @PutMapping("/{id}/cancelamento")
+    public ResponseEntity cancelar(@PathVariable Long id) {
+
+        return ordemServicoService.cancelar(id);
+    }
+
 }

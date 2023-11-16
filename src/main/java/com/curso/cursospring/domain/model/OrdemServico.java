@@ -32,4 +32,24 @@ public class OrdemServico {
     @OneToMany(mappedBy = "ordemServico")
     private List<Comentario> comentarios;
 
+    public boolean podeSerFinalizada() {
+
+        return StatusOrdemServico.ABERTA.equals(getStatus());
+    }
+
+    public boolean naoPodeSerFinalizada() {
+
+        return !podeSerFinalizada();
+    }
+
+    public boolean naoPodeSerCancelada() {
+
+        return StatusOrdemServico.FINALIZADA.equals(getStatus());
+    }
+
+    public boolean podeSerCancelada() {
+
+        return !naoPodeSerCancelada();
+    }
+
 }
