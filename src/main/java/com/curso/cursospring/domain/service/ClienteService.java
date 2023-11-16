@@ -13,11 +13,9 @@ public class ClienteService {
     ClienteRepository clienteRepository;
 
     public Cliente save(Cliente cliente) {
-        /*Pensando em uma regra mais geral, seria mais prudente utilizar findById, uma vez que esse método será reutilizado para atualizações.
-        Se a alteração for o próprio e-mail, esse usuário não será encontrado, criando um novo ao invés de atualizar um já existente.*/
         Cliente clienteExistente = clienteRepository.findByEmail(cliente.getEmail());
 
-        if(clienteExistente != null && clienteExistente.equals(cliente)) {
+        if(clienteExistente != null && clienteExistente.getEmail().equals(cliente.getEmail())) {
             throw new NegocioException("Já existe um cadastro para este em-mail.");
         }
 
