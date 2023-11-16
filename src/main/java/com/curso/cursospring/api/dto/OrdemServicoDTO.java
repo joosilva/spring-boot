@@ -11,7 +11,7 @@ import java.time.OffsetDateTime;
 public class OrdemServicoDTO {
 
     private Long id;
-    private Cliente cliente;
+    private ClienteDTO cliente;
     private String descricao;
     private BigDecimal preco;
     private StatusOrdemServico status;
