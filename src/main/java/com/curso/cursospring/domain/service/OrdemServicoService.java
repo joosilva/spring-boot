@@ -36,8 +36,8 @@ public class OrdemServicoService {
     public ResponseEntity cancelar(Long id) {
         OrdemServico ordemServico = ordemServicoRepository.findById(id).orElseThrow(() -> new NoFoundException("Ordem de Serviço não encontrada."));
 
-        if(ordemServico.podeSerCancelada()) {
-            throw new NegocioException("Esta ordem de serviço já foi finalizada em " + ordemServico.getDataFechamento() +".");
+        if (ordemServico.podeSerCancelada()) {
+            throw new NegocioException("Esta ordem de serviço já foi finalizada em " + ordemServico.getDataFechamento() + ".");
         }
 
         ordemServico.setStatus(StatusOrdemServico.CANCELADA);
@@ -51,7 +51,7 @@ public class OrdemServicoService {
     public ResponseEntity finalizar(Long id) {
         OrdemServico ordemServico = buscar(id);
 
-        if(ordemServico.naoPodeSerFinalizada()) {
+        if (ordemServico.naoPodeSerFinalizada()) {
             throw new NegocioException("Esta ordem de serviço não pode ser finalizada.");
         }
 
@@ -60,7 +60,7 @@ public class OrdemServicoService {
 
         ordemServicoRepository.save(ordemServico);
 
-         return ResponseEntity.noContent().build();
+        return ResponseEntity.noContent().build();
     }
 
     public OrdemServico buscar(Long id) {

@@ -40,7 +40,7 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
     }
 
     @ExceptionHandler(NoFoundException.class)
-    public ResponseEntity<Object> handleNoFoundExceptional(NegocioException ex, WebRequest request) {
+    public ResponseEntity<Object> handleNoFoundExceptional(NoFoundException ex, WebRequest request) {
         var status = HttpStatus.NOT_FOUND;
 
         var resposta = new Resposta();
@@ -56,8 +56,8 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
         var campos = new ArrayList<Resposta.Campo>();
         var resposta = new Resposta();
 
-        for(ObjectError error: ex.getBindingResult().getAllErrors()) {
-            String nome = ((FieldError)error).getField();
+        for (ObjectError error : ex.getBindingResult().getAllErrors()) {
+            String nome = ((FieldError) error).getField();
             String mensagem = messageSource.getMessage(error, LocaleContextHolder.getLocale());
 
             campos.add(new Resposta.Campo(nome, mensagem));

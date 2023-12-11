@@ -17,10 +17,10 @@ public class ClienteService {
         Cliente clienteExistente = clienteRepository.findByEmail(cliente.getEmail());
         Cliente clienteExistenteTelefone = clienteRepository.findByTelefone(cliente.getTelefone());
 
-        if(clienteExistente != null && !clienteExistente.getId().equals(cliente.getId()) && clienteExistente.getEmail().equals(cliente.getEmail())) {
+        if (clienteExistente != null && !clienteExistente.getId().equals(cliente.getId()) && clienteExistente.getEmail().equals(cliente.getEmail())) {
             throw new NegocioException("Já existe um usuário cadastrado com este e-mail.");
         }
-        if(clienteExistenteTelefone != null && !clienteExistenteTelefone.getId().equals(cliente.getId()) && clienteExistenteTelefone.getTelefone().equals(cliente.getTelefone())) {
+        if (clienteExistenteTelefone != null && !clienteExistenteTelefone.getId().equals(cliente.getId()) && clienteExistenteTelefone.getTelefone().equals(cliente.getTelefone())) {
             throw new NegocioException("Já existe um usuário cadastrado com este telefone.");
         }
 

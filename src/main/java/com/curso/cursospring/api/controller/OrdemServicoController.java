@@ -54,7 +54,7 @@ public class OrdemServicoController {
     public ResponseEntity<OrdemServicoDTO> getOrdemServicoById(@PathVariable Long id) {
         Optional<OrdemServico> ordemServico = ordemServicoRepository.findById(id);
 
-        if(ordemServico.isPresent()) {
+        if (ordemServico.isPresent()) {
             OrdemServicoDTO ordemServicoDTO = toMap(ordemServico.get());
             return ResponseEntity.ok(ordemServicoDTO);
         }

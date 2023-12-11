@@ -46,7 +46,7 @@ public class ClienteController {
     public ResponseEntity<ClienteDTO> getClienteById(@PathVariable Long id) {
         Optional<Cliente> cliente = clienteRepository.findById(id);
 
-        if(cliente.isPresent()) {
+        if (cliente.isPresent()) {
             ClienteDTO clienteDTO = toMap(cliente.get());
 
             return ResponseEntity.ok(clienteDTO);
@@ -63,7 +63,7 @@ public class ClienteController {
 
     @PutMapping("{id}")
     public ResponseEntity<ClienteDTO> putCliente(@Valid @PathVariable Long id, @RequestBody Cliente cliente) {
-        if(clienteRepository.existsById(id)) {
+        if (clienteRepository.existsById(id)) {
             cliente.setId(id);
             cliente = clienteService.save(cliente);
             ClienteDTO clienteDTO = toMap(cliente);
@@ -75,8 +75,8 @@ public class ClienteController {
     }
 
     @DeleteMapping("{id}")
-    public ResponseEntity<Void> deleteCliente (@PathVariable Long id) {
-        if(clienteRepository.existsById(id)) {
+    public ResponseEntity<Void> deleteCliente(@PathVariable Long id) {
+        if (clienteRepository.existsById(id)) {
             clienteService.deleteById(id);
 
             return ResponseEntity.noContent().build();
